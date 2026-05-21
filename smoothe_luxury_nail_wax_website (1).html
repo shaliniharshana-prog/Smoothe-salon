@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smoothé | Nail & Wax Salon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #fff9fb;
+      color: #2c2c2c;
+      overflow-x: hidden;
+    }
+
+    :root {
+      --pink: #f4c6d3;
+      --light-pink: #fff3f7;
+      --gold: #d6b26e;
+      --white: #ffffff;
+      --dark: #1d1d1d;
+    }
+
+    header {
+      min-height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+      url('https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=1974&auto=format&fit=crop') center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(8px);
+      padding: 50px 40px;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.2);
+      max-width: 700px;
+    }
+
+    .hero img {
+      width: 260px;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 5px 20px rgba(0,0,0,0.3));
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      color: white;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+
+    .hero p {
+      color: #f5f5f5;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 35px;
+      background: var(--pink);
+      color: var(--dark);
+      text-decoration: none;
+      border-radius: 40px;
+      font-weight: 500;
+      transition: 0.3s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover {
+      background: transparent;
+      border: 1px solid white;
+      color: white;
+    }
+
+    section {
+      padding: 90px 10%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #666;
+      font-size: 1rem;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 35px;
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      transition: 0.3s ease;
+      border: 1px solid #f1e1e6;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .service-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+
+    .service-card p {
+      line-height: 1.8;
+      color: #555;
+    }
+
+    .about {
+      background: var(--light-pink);
+      border-radius: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .about-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+
+    .about-text p {
+      line-height: 1.9;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 25px;
+      transition: 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    .contact {
+      background: linear-gradient(to right, #fff0f5, #ffffff);
+      border-radius: 35px;
+      text-align: center;
+      padding: 70px 30px;
+    }
+
+    .contact h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .contact p {
+      margin-bottom: 15px;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 30px;
+      margin-top: 80px;
+    }
+
+    @media(max-width: 768px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .section-title h2,
+      .about-text h2,
+      .contact h2 {
+        font-size: 2.3rem;
+      }
+
+      section {
+        padding: 70px 7%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="hero">
+      <img src="Smoothé.png" alt="Smoothé Logo">
+      <h1>Luxury Beauty Experience</h1>
+      <p>
+        Elegant nails. Smooth skin. Timeless confidence. <br>
+        Welcome to Smoothé Nail & Wax Salon.
+      </p>
+      <a href="#contact" class="btn">Book Appointment</a>
+    </div>
+  </header>
+
+  <section>
+    <div class="section-title">
+      <h2>Our Services</h2>
+      <p>Luxury treatments designed for confidence and beauty.</p>
+    </div>
+
+    <div class="services">
+      <div class="service-card">
+        <h3>Nail Art</h3>
+        <p>
+          Elegant manicures, gel nails, acrylic extensions, chrome finishes,
+          and luxury nail art designs.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Waxing</h3>
+        <p>
+          Professional waxing treatments for smooth, flawless skin with gentle,
+          high-quality products.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Self Care</h3>
+        <p>
+          Relaxing beauty experiences with a luxurious atmosphere designed to
+          help you feel confident and refreshed.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="about">
+      <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=1974&auto=format&fit=crop" alt="Salon Image">
+
+      <div class="about-text">
+        <h2>About Smoothé</h2>
+        <p>
+          Smoothé is a luxury nail and wax salon designed for women who love elegance,
+          beauty, and confidence. Our mission is to provide premium beauty services in
+          a warm and sophisticated environment.
+        </p>
+
+        <p>
+          From soft glam nails to professional waxing treatments, every service is crafted
+          to make you feel polished, confident, and beautiful.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">
+      <h2>Beauty Gallery</h2>
+      <p>Luxury moments from our salon aesthetic.</p>
+    </div>
+
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?q=80&w=1974&auto=format&fit=crop" alt="Nails">
+      <img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=1974&auto=format&fit=crop" alt="Wax">
+      <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=1974&auto=format&fit=crop" alt="Salon">
+    </div>
+  </section>
+
+  <section>
+    <div class="contact" id="contact">
+      <h2>Book Your Appointment</h2>
+      <p>📍 Pettah, Sri Lanka</p>
+      <p>📞 WhatsApp: 0771859065</p>
+      <p>📷 Instagram: @smoothe.beauty</p>
+      <br>
+      <a href="https://wa.me/94771859065" class="btn">Chat on WhatsApp</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Smoothé Nail & Wax Salon — Luxury Beauty Experience</p>
+  </footer>
+
+</body>
+</html>
